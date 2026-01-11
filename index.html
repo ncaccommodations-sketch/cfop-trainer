@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CFOP Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark">
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="logo">CFOP Trainer</div>
+    <nav>
+      <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+      <button class="nav-btn" data-tab="training">Training</button>
+      <button class="nav-btn" data-tab="timer">Timer</button>
+      <button class="nav-btn" data-tab="analytics">Analytics</button>
+      <button class="nav-btn" data-tab="progress">Progress</button>
+      <button class="nav-btn" data-tab="settings">Settings</button>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="tab active">
+      <h1>Dashboard</h1>
+
+      <div class="stats-grid">
+        <div class="stat-card">Ao5 <span id="ao5">--</span></div>
+        <div class="stat-card">Ao12 <span id="ao12">--</span></div>
+        <div class="stat-card">Ao50 <span id="ao50">--</span></div>
+        <div class="stat-card">Ao100 <span id="ao100">--</span></div>
+        <div class="stat-card">Best <span id="best">--</span></div>
+        <div class="stat-card">Session Best <span id="sessionBest">--</span></div>
+      </div>
+
+      <h2>Recent Solves</h2>
+      <ul id="recentSolves" class="solve-list"></ul>
+    </section>
+
+    <!-- TRAINING -->
+    <section id="training" class="tab">
+      <h1>CFOP Training</h1>
+
+      <div class="step-selector">
+        <button data-step="cross" class="step-btn active">Cross</button>
+        <button data-step="f2l" class="step-btn">F2L</button>
+        <button data-step="oll" class="step-btn">OLL</button>
+        <button data-step="pll" class="step-btn">PLL</button>
+      </div>
+
+      <div id="algorithmList" class="algorithm-grid"></div>
+    </section>
+
+    <!-- TIMER -->
+    <section id="timer" class="tab">
+      <h1>Timer</h1>
+
+      <div id="scramble" class="scramble"></div>
+
+      <div id="inspection" class="inspection hidden">
+        Inspection: <span id="inspectionTime">15</span>
+      </div>
+
+      <div id="timerDisplay" class="timer-display">0.00</div>
+
+      <div class="timer-controls">
+        <button id="newScramble">New Scramble</button>
+        <button id="toggleInspection">Toggle Inspection</button>
+      </div>
+    </section>
+
+    <!-- ANALYTICS -->
+    <section id="analytics" class="tab">
+      <h1>Analytics</h1>
+      <canvas id="averageChart"></canvas>
+      <canvas id="consistencyChart"></canvas>
+    </section>
+
+    <!-- PROGRESS -->
+    <section id="progress" class="tab">
+      <h1>Progress</h1>
+      <div id="progressGrid" class="progress-grid"></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="tab">
+      <h1>Settings</h1>
+
+      <label>
+        <input type="checkbox" id="themeToggle" />
+        Light Mode
+      </label>
+
+      <label>
+        <input type="checkbox" id="animationToggle" checked />
+        Enable Animations
+      </label>
+
+      <button id="exportData">Export Solve Data</button>
+      <button id="resetData">Reset All Data</button>
+    </section>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
